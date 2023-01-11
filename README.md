@@ -2,11 +2,32 @@
 
 [![Unit Test](https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml)
 
+Check if your node_modules is stale.
+
 ## Usage
 
+`stale-dep -u`: store the current dependencies status.
+`stale-dep`: check if dependencies status is changed comparing to previous stored.
+
+### Add `stale-dep` to the project
+
+1. Install stale-dep as a dev dependency:
+
 ```bash
-pnpx stale-dep
-# Bun: bunx stale-dep
+npm install -D stale-dep
+```
+
+2. Add `stale-dep` to your package.json.
+
+```jsonc
+{
+  "scripts": {
+    "build": "stale-dep && some build command",
+    "dev": "stale-dep && some dev command",
+    // ...
+    "postinstall": "stale-dep -u"
+  }
+}
 ```
 
 ## Sponsors
