@@ -19,8 +19,15 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./cli": {
+      "require": "./dist/cli.js",
+      "import": "./dist/cli.mjs"
+    },
+    "./*": "./*"
   },
   "bin": {
     "stale-dep": "./bin/stale-dep.mjs"
