@@ -4,16 +4,17 @@ import { existsSync } from 'node:fs'
 import consola from 'consola'
 import md5 from 'md5'
 import { ensureDir } from 'fs-extra'
-import { detectPackageManager } from './helper'
-import { lockFileMap, rcFileMap } from './constant'
+import { getProjectInfo } from './helper'
+import { PMS, lockFileMap, rcFileMap } from './constant'
 import type { PackageManager } from './constant'
 
-export async function getPackageManager(): Promise<PackageManager> {
-  const packageManager = await detectPackageManager()
-  if (!packageManager) throw new Error('No package manager lock file found.')
-  else if (packageManager === 'yarn@berry')
-    throw new Error('yarn@berry is not supported.')
-  return packageManager
+export async function getPackageManager(
+  path: string = process.cwd()
+): Promise<PackageManager> {
+  const pm = await getProjectInfo({ cwd: path })
+  if (!pm) throw new Error('No package manager lock file found.')
+  else if (!PMS.includes(pm)) throw new Error(`${pm} is not supported.`)
+  return pm
 }
 
 export async function calcHash(
