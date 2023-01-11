@@ -34,6 +34,7 @@
     "build": "pnpm check && tsup",
     "test": "tsx ./src/cli.ts --update && vitest",
     "check": "tsx ./src/cli.ts",
+    "update-hash": "tsx ./src/cli.ts --update",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },

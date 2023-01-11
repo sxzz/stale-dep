@@ -20,7 +20,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install
-        run: nci
+        run: nci && nr update-hash
 
       - name: Lint
         run: nr lint
@@ -45,7 +45,7 @@ jobs:
         run: npm i -g @antfu/ni
 
       - name: Install
-        run: nci
+        run: nci && nr update-hash
 
       - name: Build
         run: nr build
