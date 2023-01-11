@@ -1,5 +1,6 @@
 import { program } from 'commander'
 import consola from 'consola'
+import { PROJECT_NAME } from './constant'
 import { calcHash, checkHash, getPackageManager, storeHash } from '.'
 
 program.option('-u, --update')
@@ -27,7 +28,10 @@ async function run() {
       )
     }
   } catch (err) {
-    consola.error((err as Error).message ?? 'Unknown error in stale-dep.')
+    consola.error(
+      `[${PROJECT_NAME}]`,
+      (err as Error).message ?? 'Unknown error in stale-dep.'
+    )
     process.exit(1)
   }
 }

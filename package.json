@@ -39,9 +39,9 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@antfu/ni": "^0.18.8",
     "commander": "^9.5.0",
     "consola": "^2.15.3",
+    "find-up": "^6.3.0",
     "fs-extra": "^11.1.0",
     "md5": "^2.3.0"
   },

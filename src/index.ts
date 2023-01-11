@@ -2,29 +2,14 @@ import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { existsSync } from 'node:fs'
 import consola from 'consola'
-import { detect } from '@antfu/ni'
 import md5 from 'md5'
 import { ensureDir } from 'fs-extra'
-
-export const rcFileMap = {
-  npm: ['.npmrc'],
-  yarn: ['.yarnrc'],
-  pnpm: ['.npmrc', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
-  'pnpm@6': ['.npmrc', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
-  bun: [],
-} as const
-
-export const lockFileMap = {
-  npm: 'package-lock.json',
-  yarn: 'yarn.lock',
-  pnpm: 'pnpm-lock.yaml',
-  'pnpm@6': 'pnpm-lock.yaml',
-  bun: 'bun.lockb',
-} as const
-export type PackageManager = keyof typeof lockFileMap
+import { detectPackageManager } from './helper'
+import { lockFileMap, rcFileMap } from './constant'
+import type { PackageManager } from './constant'
 
 export async function getPackageManager(): Promise<PackageManager> {
-  const packageManager = await detect({})
+  const packageManager = await detectPackageManager()
   if (!packageManager) throw new Error('No package manager lock file found.')
   else if (packageManager === 'yarn@berry')
     throw new Error('yarn@berry is not supported.')
