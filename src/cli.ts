@@ -22,7 +22,7 @@ async function run() {
       bun: 'bun install',
     }[packageManager]
     consola.error(
-      `Stale node_modules detected, please run \`${installCommand}\``
+      `Your node_modules is stale. Please run \`${installCommand}\` first.`
     )
     process.exit(1)
   }
