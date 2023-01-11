@@ -32,11 +32,10 @@
     "lint": "eslint . --ext .js,.ts,.json,.md",
     "lint:fix": "pnpm run lint --fix",
     "build": "pnpm check && tsup",
-    "test": "vitest",
+    "test": "tsx ./src/cli.ts --update && vitest",
     "check": "tsx ./src/cli.ts",
     "release": "bumpp && pnpm publish",
-    "prepublishOnly": "pnpm run build",
-    "postinstall": "tsx ./src/cli.ts --update"
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@antfu/ni": "^0.18.8",
