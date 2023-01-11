@@ -27,7 +27,7 @@ async function run() {
       )
     }
   } catch (err) {
-    consola.error((err as Error).message ?? 'Unknown Error in stale-dep')
+    consola.error((err as Error).message ?? 'Unknown error in stale-dep.')
     process.exit(1)
   }
 }
