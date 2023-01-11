@@ -1,0 +1,67 @@
+{
+  "name": "stale-dep",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.23.0",
+  "description": "Check your node_modules matches your package.json.",
+  "license": "MIT",
+  "homepage": "https://github.com/sxzz/stale-dep#readme",
+  "bugs": {
+    "url": "https://github.com/sxzz/stale-dep/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sxzz/stale-dep.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "bin": {
+    "stale-dep": "./bin/stale-dep.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts,.json,.md",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "pnpm check && tsup",
+    "test": "vitest",
+    "check": "tsx ./src/cli.ts",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build",
+    "postinstall": "tsx ./src/cli.ts --update"
+  },
+  "dependencies": {
+    "@antfu/ni": "^0.18.8",
+    "commander": "^9.5.0",
+    "consola": "^2.15.3",
+    "fs-extra": "^11.1.0",
+    "md5": "^2.3.0"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config-prettier": "^2.4.4",
+    "@sxzz/eslint-config-ts": "^2.4.4",
+    "@types/fs-extra": "^11.0.1",
+    "@types/md5": "^2.3.2",
+    "@types/node": "^18.11.18",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.31.0",
+    "eslint-define-config": "^1.14.0",
+    "fast-glob": "^3.2.12",
+    "prettier": "^2.8.2",
+    "tsup": "^6.5.0",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.0"
+  },
+  "engines": {
+    "node": ">=14.19.0"
+  }
+}
