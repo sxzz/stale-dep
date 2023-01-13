@@ -14,6 +14,9 @@ import {
 } from './constant'
 import type { PackageManager } from './constant'
 
+export * from './constant'
+export * from './command'
+
 export async function getPackageManager(
   path: string = process.cwd()
 ): Promise<PackageManager> {
