@@ -1,3 +1,5 @@
+import path from 'node:path'
+
 export const PROJECT_NAME = 'stale-dep'
 
 export const rcFileMap = {
@@ -16,7 +18,7 @@ export const lockFileMap = {
 } as const
 export type PackageManager = keyof typeof lockFileMap
 
-export const installCommand: Record<PackageManager, string> = {
+export const INSTALL_COMMANDS: Record<PackageManager, string> = {
   npm: 'npm install',
   yarn: 'yarn',
   pnpm: 'pnpm i',
@@ -26,3 +28,7 @@ export const installCommand: Record<PackageManager, string> = {
 export const PMS = Object.keys(lockFileMap) as PackageManager[]
 export const LOCKS = Object.values(lockFileMap)
 export const AGENTS_AND_LOCKS = Object.entries(lockFileMap)
+
+export const cacheDir = path.resolve(process.cwd(), 'node_modules/.cache')
+export const hashFile = path.resolve(cacheDir, 'dep-hash')
+export const mtimeFile = path.resolve(cacheDir, 'dep-mtime')

@@ -1,11 +1,17 @@
 import { lstat, readFile, writeFile } from 'node:fs/promises'
-import path from 'node:path'
 import { existsSync } from 'node:fs'
 import consola from 'consola'
 import md5 from 'md5'
 import { ensureDir } from 'fs-extra'
 import { getProjectInfo } from './helper'
-import { PMS, lockFileMap, rcFileMap } from './constant'
+import {
+  PMS,
+  cacheDir,
+  hashFile,
+  lockFileMap,
+  mtimeFile,
+  rcFileMap,
+} from './constant'
 import type { PackageManager } from './constant'
 
 export async function getPackageManager(
@@ -66,8 +72,6 @@ export async function calcHash(
   return hash
 }
 
-const cacheDir = path.resolve(process.cwd(), 'node_modules/.cache')
-const hashFile = path.resolve(cacheDir, 'dep-hash')
 export async function storeHash(hash: string): Promise<void> {
   await ensureDir(cacheDir)
   await writeFile(hashFile, hash)
@@ -84,52 +88,47 @@ export async function checkHash(
   return (await getHash()) === (await calcHash(packageManager))
 }
 
-const modifyTimeStampsFile = path.resolve(cacheDir, 'dep-modify-time-stamps')
-export async function storeModifyTimeStamps(
-  modifyTimeStamps: number[]
-): Promise<void> {
+export async function storeMtime(mtime: Record<string, number>): Promise<void> {
   await ensureDir(cacheDir)
-  await writeFile(modifyTimeStampsFile, JSON.stringify(modifyTimeStamps))
+  await writeFile(mtimeFile, JSON.stringify(mtime))
 }
 
-export function getModifyTimeStamps(): Promise<number[]> | undefined {
-  if (!existsSync(modifyTimeStampsFile)) return undefined
-  return readFile(modifyTimeStampsFile, 'utf-8').then(
-    (r) => JSON.parse(r) as number[]
-  )
+export function getMtime(): Promise<Record<string, number>> | undefined {
+  if (!existsSync(mtimeFile)) return undefined
+  return readFile(mtimeFile, 'utf-8').then((r) => JSON.parse(r))
 }
 
-export async function calcModifyTimeStamps(
+export async function calcMtime(
   packageManager: PackageManager
-): Promise<number[]> {
-  const modifyTimeStamps: number[] = []
+): Promise<Record<string, number>> {
+  const mtime: Record<string, number> = {}
 
-  modifyTimeStamps.push(await getModifyTimeStampFromFile('package.json'))
+  mtime['package.json'] = await getFileMtime('package.json')
 
   const lockFile = lockFileMap[packageManager]
-  modifyTimeStamps.push(await getModifyTimeStampFromFile(lockFile))
+  mtime[lockFile] = await getFileMtime(lockFile)
 
   for (const rcFile of rcFileMap[packageManager]) {
     if (!existsSync(rcFile)) continue
-    modifyTimeStamps.push(await getModifyTimeStampFromFile(rcFile))
+    mtime[rcFile] = await getFileMtime(rcFile)
   }
 
-  return modifyTimeStamps
+  return mtime
 }
 
-export async function checkModifyTimeStamps(
+export async function checkMtime(
   packageManager: PackageManager
 ): Promise<boolean> {
-  const lastModifyTimeStamps = (await getModifyTimeStamps()) || []
-  const currentModifyTimeStamps = await calcModifyTimeStamps(packageManager)
+  const cached = await getMtime()
+  if (!cached) return false
 
-  return currentModifyTimeStamps.every((cm, i) => {
-    const lm = lastModifyTimeStamps[i]
-    return cm === lm
-  })
+  const current = await calcMtime(packageManager)
+  return [...new Set([...Object.keys(cached), ...Object.keys(current)])].every(
+    (k) => cached[k] === current[k]
+  )
 }
 
-async function getModifyTimeStampFromFile(file: string): Promise<number> {
+async function getFileMtime(file: string): Promise<number> {
   const { mtime } = await lstat(file)
   return mtime.getTime()
 }

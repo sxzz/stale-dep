@@ -1,14 +1,14 @@
 import { program } from 'commander'
 import consola from 'consola'
-import { PROJECT_NAME } from './constant'
+import { INSTALL_COMMANDS, PROJECT_NAME } from './constant'
 import {
   calcHash,
-  calcModifyTimeStamps,
+  calcMtime,
   checkHash,
-  checkModifyTimeStamps,
+  checkMtime,
   getPackageManager,
   storeHash,
-  storeModifyTimeStamps,
+  storeMtime,
 } from '.'
 import type { PackageManager } from './constant'
 
@@ -19,23 +19,17 @@ const options = program.opts<{ update: boolean }>()
 run()
 
 export async function update(pm: PackageManager) {
-  await storeHash(await calcHash(pm))
-  await storeModifyTimeStamps(await calcModifyTimeStamps(pm))
+  await Promise.all([
+    calcHash(pm).then((hash) => storeHash(hash)),
+    calcMtime(pm).then((mtime) => storeMtime(mtime)),
+  ])
   consola.success('Successfully store the dependency hash')
 }
 
 export async function check(pm: PackageManager) {
-  if (!(await checkModifyTimeStamps(pm)) && !(await checkHash(pm))) {
-    const installCommand = {
-      npm: 'npm install',
-      yarn: 'yarn',
-      pnpm: 'pnpm i',
-      'pnpm@6': 'pnpm i',
-      bun: 'bun install',
-    }[pm]
-    throw new Error(
-      `Your node_modules is stale. Please run \`${installCommand}\` first.`
-    )
+  if (!(await checkMtime(pm)) && !(await checkHash(pm))) {
+    const cmd = INSTALL_COMMANDS[pm]
+    throw new Error(`Your node_modules is stale. Please run \`${cmd}\` first.`)
   }
 }
 
@@ -50,7 +44,7 @@ async function run() {
   } catch (err) {
     consola.error(
       `[${PROJECT_NAME}]`,
-      (err as Error).message ?? 'Unknown error in stale-dep.'
+      (err as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
     )
     process.exit(1)
   }

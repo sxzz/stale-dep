@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { checkHash, checkModifyTimeStamps, getPackageManager } from '../src'
+import { checkHash, checkMtime, getPackageManager } from '../src'
 
 test('getPackageManager', async () => {
   expect(await getPackageManager()).toBe('pnpm')
@@ -10,7 +10,7 @@ test('checkHash', async () => {
   expect(await checkHash(pm)).toBe(true)
 })
 
-test('checkModifyTimeStamps', async () => {
+test('checkMtime', async () => {
   const pm = await getPackageManager()
-  expect(await checkModifyTimeStamps(pm)).toBe(true)
+  expect(await checkMtime(pm)).toBe(true)
 })
