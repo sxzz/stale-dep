@@ -1,7 +1,15 @@
 import { program } from 'commander'
 import consola from 'consola'
 import { PROJECT_NAME } from './constant'
-import { calcHash, checkHash, getPackageManager, storeHash } from '.'
+import {
+  calcHash,
+  calcModifyTimeStamps,
+  checkHash,
+  checkModifyTimeStamps,
+  getPackageManager,
+  storeHash,
+  storeModifyTimeStamps,
+} from '.'
 import type { PackageManager } from './constant'
 
 program.option('-u, --update')
@@ -12,11 +20,12 @@ run()
 
 export async function update(pm: PackageManager) {
   await storeHash(await calcHash(pm))
+  await storeModifyTimeStamps(await calcModifyTimeStamps(pm))
   consola.success('Successfully store the dependency hash')
 }
 
 export async function check(pm: PackageManager) {
-  if (!(await checkHash(pm))) {
+  if (!(await checkModifyTimeStamps(pm)) && !(await checkHash(pm))) {
     const installCommand = {
       npm: 'npm install',
       yarn: 'yarn',
