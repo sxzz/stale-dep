@@ -1,21 +1,20 @@
-import { program } from 'commander'
+import cac from 'cac'
 import consola from 'consola'
 import { PROJECT_NAME } from './constant'
 import { check, update } from './command'
 import { getPackageManager } from '.'
 
-program.option('-u, --update')
-program.parse(process.argv)
+const cli = cac('stale-dep')
 
-const options = program.opts<{
-  update: boolean
-}>()
+cli.option('-u, --update', 'Update stale dependencies', { default: false })
+const options = cli.parse()
+
 run()
 
 async function run() {
   try {
     const pm = await getPackageManager()
-    if (options.update) {
+    if (options.options.update) {
       await update(pm)
     } else {
       await check(pm)
