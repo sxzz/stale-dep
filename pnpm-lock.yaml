@@ -19,6 +19,7 @@ specifiers:
   tsup: ^6.5.0
   tsx: ^3.12.2
   typescript: ^4.9.5
+  vite: ^4.1.1
   vitest: ^0.28.3
 
 dependencies:
@@ -42,6 +43,7 @@ devDependencies:
   tsup: 6.5.0_typescript@4.9.5
   tsx: 3.12.2
   typescript: 4.9.5
+  vite: 4.1.1_@types+node@18.11.18
   vitest: 0.28.3
 
 packages:
