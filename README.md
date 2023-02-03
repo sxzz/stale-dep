@@ -4,18 +4,19 @@
 
 Check if your `node_modules` is stale.
 
-### Running on-demand:
+### Running on-demand
 
 Using `npx` you can run the script without installing it first:
 
-    npx stale-dep
+```bash
+npx stale-dep
+```
 
 ## Usage
 
 `stale-dep -u`: store the current dependencies status.
 
 `stale-dep`: check if dependencies status is changed comparing to previous stored.
-
 
 ### Add `stale-dep` to the project
 
