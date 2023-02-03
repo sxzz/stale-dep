@@ -4,6 +4,14 @@
 
 Check if your `node_modules` is stale.
 
+### Running on-demand
+
+Using `npx` you can run the script without installing it first:
+
+```bash
+npx stale-dep
+```
+
 ## Usage
 
 `stale-dep -u`: store the current dependencies status.
