@@ -53,10 +53,14 @@
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
-    "@nuxt/kit": "^3.0.0"
+    "@nuxt/kit": "^3.0.0",
+    "@nuxt/schema": "^3.0.0"
   },
   "peerDependenciesMeta": {
     "@nuxt/kit": {
+      "optional": true
+    },
+    "@nuxt/schema": {
       "optional": true
     }
   },
@@ -69,6 +73,7 @@
   },
   "devDependencies": {
     "@nuxt/kit": "^3.2.0",
+    "@nuxt/schema": "^3.2.0",
     "@sxzz/eslint-config-prettier": "^2.4.4",
     "@sxzz/eslint-config-ts": "^2.4.4",
     "@types/fs-extra": "^11.0.1",

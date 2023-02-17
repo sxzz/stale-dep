@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@nuxt/kit': ^3.2.0
+  '@nuxt/schema': ^3.2.0
   '@sxzz/eslint-config-prettier': ^2.4.4
   '@sxzz/eslint-config-ts': ^2.4.4
   '@types/fs-extra': ^11.0.1
@@ -32,6 +33,7 @@ dependencies:
 
 devDependencies:
   '@nuxt/kit': 3.2.0
+  '@nuxt/schema': 3.2.0
   '@sxzz/eslint-config-prettier': 2.4.4_eslint@8.33.0
   '@sxzz/eslint-config-ts': 2.4.4_4vsywjlpuriuw3tl5oq6zy5a64
   '@types/fs-extra': 11.0.1
@@ -637,11 +639,11 @@ packages:
       hookable: 5.4.2
       jiti: 1.17.1
       pathe: 1.1.0
-      pkg-types: 1.0.1
+      pkg-types: 1.0.2
       postcss-import-resolver: 2.0.0
       scule: 1.0.0
       std-env: 3.3.2
-      ufo: 1.0.1
+      ufo: 1.1.0
       unimport: 2.2.4
       untyped: 1.2.2
     transitivePeerDependencies:

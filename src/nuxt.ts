@@ -1,6 +1,7 @@
 import { defineNuxtModule } from '@nuxt/kit'
 import { check, getPackageManager } from '.'
 import type { PackageManager } from '.'
+import type {} from '@nuxt/schema'
 
 export default defineNuxtModule<{
   enabled?: boolean
