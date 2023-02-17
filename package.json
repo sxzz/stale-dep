@@ -36,6 +36,14 @@
     },
     "./*": "./*"
   },
+  "typesVersions": {
+    "<=4.9": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
   "bin": {
     "stale-dep": "./bin/stale-dep.mjs"
   },
