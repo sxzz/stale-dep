@@ -1,6 +1,6 @@
 {
   "name": "stale-dep",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "packageManager": "pnpm@7.23.0",
   "description": "Check your node_modules matches your package.json.",
   "license": "MIT",
