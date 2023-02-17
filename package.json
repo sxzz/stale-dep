@@ -45,6 +45,14 @@
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
+  "peerDependencies": {
+    "@nuxt/kit": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nuxt/kit": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "cac": "^6.7.14",
     "consola": "^2.15.3",
@@ -53,6 +61,7 @@
     "md5": "^2.3.0"
   },
   "devDependencies": {
+    "@nuxt/kit": "^3.2.0",
     "@sxzz/eslint-config-prettier": "^2.4.4",
     "@sxzz/eslint-config-ts": "^2.4.4",
     "@types/fs-extra": "^11.0.1",
