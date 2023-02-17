@@ -6,6 +6,7 @@ import { getPackageManager } from '.'
 
 const cli = cac('stale-dep')
 
+cli.option('-p, --packageManager <packageManager>', 'specific package manager')
 cli.option('-u, --update', 'Update stale dependencies', { default: false })
 const options = cli.parse()
 
@@ -13,7 +14,7 @@ run()
 
 async function run() {
   try {
-    const pm = await getPackageManager()
+    const pm = options.options.packageManager || (await getPackageManager())
     if (options.options.update) {
       await update(pm)
     } else {
