@@ -87,7 +87,7 @@
     "@types/fs-extra": "^11.0.1",
     "@types/md5": "^2.3.2",
     "@types/node": "^18.15.11",
-    "bumpp": "^8.2.1",
+    "bumpp": "^9.1.0",
     "eslint": "^8.37.0",
     "eslint-define-config": "^1.17.0",
     "fast-glob": "^3.2.12",
