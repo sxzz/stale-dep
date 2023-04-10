@@ -1,7 +1,7 @@
 {
   "name": "stale-dep",
   "version": "0.6.0",
-  "packageManager": "pnpm@7.30.5",
+  "packageManager": "pnpm@8.2.0",
   "description": "Check your node_modules matches your package.json.",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/stale-dep#readme",
