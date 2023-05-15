@@ -1,7 +1,7 @@
 {
   "name": "stale-dep",
   "version": "0.6.0",
-  "packageManager": "pnpm@8.4.0",
+  "packageManager": "pnpm@8.5.1",
   "description": "Check your node_modules matches your package.json.",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/stale-dep#readme",
@@ -86,7 +86,7 @@
     "@sxzz/eslint-config-ts": "^2.4.6",
     "@types/fs-extra": "^11.0.1",
     "@types/md5": "^2.3.2",
-    "@types/node": "^18.16.5",
+    "@types/node": "^18.16.9",
     "bumpp": "^9.1.0",
     "eslint": "^8.40.0",
     "eslint-define-config": "^1.20.0",
