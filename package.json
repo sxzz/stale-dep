@@ -20,17 +20,26 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": {
+        "require": "./dist/index.d.ts",
+        "import": "./dist/index.d.mts"
+      },
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
     },
     "./cli": {
-      "types": "./dist/cli.d.ts",
+      "types": {
+        "require": "./dist/cli.d.ts",
+        "import": "./dist/cli.d.mts"
+      },
       "require": "./dist/cli.js",
       "import": "./dist/cli.mjs"
     },
     "./nuxt": {
-      "types": "./dist/nuxt.d.ts",
+      "types": {
+        "require": "./dist/nuxt.d.ts",
+        "import": "./dist/nuxt.d.mts"
+      },
       "require": "./dist/nuxt.js",
       "import": "./dist/nuxt.mjs"
     },
@@ -74,29 +83,29 @@
   },
   "dependencies": {
     "cac": "^6.7.14",
-    "consola": "^3.2.2",
+    "consola": "^3.2.3",
     "find-up": "^6.3.0",
     "fs-extra": "^11.1.1",
     "md5": "^2.3.0"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.6.1",
-    "@nuxt/schema": "^3.6.1",
+    "@nuxt/kit": "^3.6.2",
+    "@nuxt/schema": "^3.6.2",
     "@sxzz/eslint-config-prettier": "^2.4.6",
     "@sxzz/eslint-config-ts": "^2.4.6",
     "@types/fs-extra": "^11.0.1",
     "@types/md5": "^2.3.2",
-    "@types/node": "^18.16.19",
+    "@types/node": "^20.4.0",
     "bumpp": "^9.1.1",
     "eslint": "^8.44.0",
     "eslint-define-config": "^1.21.0",
     "fast-glob": "^3.3.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "tsup": "^7.1.0",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6",
-    "vite": "^4.3.9",
-    "vitest": "^0.32.2"
+    "vite": "^4.4.2",
+    "vitest": "^0.33.0"
   },
   "engines": {
     "node": ">=14.19.0"
