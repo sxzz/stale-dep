@@ -60,7 +60,7 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "eslint . --ext .js,.ts,.json,.md",
+    "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "build": "pnpm check && tsup",
     "test": "tsx ./src/cli.ts --update && vitest",

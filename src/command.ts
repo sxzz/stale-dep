@@ -1,6 +1,7 @@
 import consola from 'consola'
 import { INSTALL_COMMANDS } from './constant'
 import {
+  type PackageManager,
   calcHash,
   calcMtime,
   checkHash,
@@ -8,7 +9,6 @@ import {
   storeHash,
   storeMtime,
 } from '.'
-import type { PackageManager } from './constant'
 
 export async function update(pm: PackageManager) {
   await Promise.all([

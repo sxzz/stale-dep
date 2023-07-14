@@ -2,8 +2,7 @@ import { basename, resolve } from 'node:path'
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { findUp } from 'find-up'
-import { AGENTS_AND_LOCKS, LOCKS } from './constant'
-import type { PackageManager } from './constant'
+import { AGENTS_AND_LOCKS, LOCKS, type PackageManager } from './constant'
 
 // fork from https://github.com/antfu/ni/blob/main/src/detect.ts, but remove some unnecessary functions here.
 export const getProjectInfo = async ({

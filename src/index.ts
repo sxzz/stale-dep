@@ -6,13 +6,13 @@ import { ensureDir } from 'fs-extra'
 import { getProjectInfo } from './helper'
 import {
   PMS,
+  type PackageManager,
   cacheDir,
   hashFile,
   lockFileMap,
   mtimeFile,
   rcFileMap,
 } from './constant'
-import type { PackageManager } from './constant'
 
 export * from './constant'
 export * from './command'

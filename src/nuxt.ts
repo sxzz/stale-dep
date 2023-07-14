@@ -1,9 +1,9 @@
 import { defineNuxtModule } from '@nuxt/kit'
-import { PROJECT_NAME, check, getPackageManager } from '.'
-import type { PackageManager } from '.'
-import type {} from '@nuxt/schema'
 import { consola } from 'consola'
+import { PROJECT_NAME, type PackageManager, check, getPackageManager } from '.'
+import {} from '@nuxt/schema'
 
+// eslint-disable-next-line import/no-default-export
 export default defineNuxtModule<{
   enabled?: boolean
   packageManager?: PackageManager
