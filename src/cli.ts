@@ -8,23 +8,26 @@ const cli = cac('stale-dep')
 
 cli.option('-p, --packageManager <packageManager>', 'specific package manager')
 cli.option('-u, --update', 'Update stale dependencies', { default: false })
-const options = cli.parse()
+cli.option('-w, --warn', 'Show warning messages instead of errors', {
+  default: false,
+})
+const argv = cli.parse()
 
 run()
 
 async function run() {
   try {
-    const pm = options.options.packageManager || (await getPackageManager())
-    if (options.options.update) {
+    const pm = argv.options.packageManager || (await getPackageManager())
+    if (argv.options.update) {
       await update(pm)
     } else {
       await check(pm)
     }
   } catch (err) {
-    consola.error(
+    consola[argv.options.warn ? 'warn' : 'error'](
       `[${PROJECT_NAME}]`,
       (err as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
     )
-    process.exit(1)
+    if (!argv.options.warn) process.exit(1)
   }
 }
