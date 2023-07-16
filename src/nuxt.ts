@@ -1,7 +1,6 @@
 import { defineNuxtModule } from '@nuxt/kit'
 import { consola } from 'consola'
 import { PROJECT_NAME, type PackageManager, check, getPackageManager } from '.'
-// eslint-disable-next-line antfu/prefer-inline-type-import
 import type {} from '@nuxt/schema'
 
 // eslint-disable-next-line import/no-default-export
