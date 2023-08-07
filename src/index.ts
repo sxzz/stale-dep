@@ -57,8 +57,8 @@ export async function calcHash(
       resolutions: json.resolutions,
       overrides: json.overrides,
     })
-  } catch (err) {
-    consola.warn(err)
+  } catch (error) {
+    consola.warn(error)
   }
 
   const lockFile = lockFileMap[packageManager]

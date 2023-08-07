@@ -13,6 +13,7 @@ cli.option('-w, --warn', 'Show warning messages instead of errors', {
 })
 const argv = cli.parse()
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 run()
 
 async function run() {
@@ -23,10 +24,10 @@ async function run() {
     } else {
       await check(pm)
     }
-  } catch (err) {
+  } catch (error) {
     consola[argv.options.warn ? 'warn' : 'error'](
       `[${PROJECT_NAME}]`,
-      (err as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
+      (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
     )
     if (!argv.options.warn) process.exit(1)
   }

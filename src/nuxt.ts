@@ -22,11 +22,11 @@ export default defineNuxtModule<{
 
     try {
       await check(opts.packageManager || (await getPackageManager()))
-    } catch (err: any) {
+    } catch (error: any) {
       if (opts.warn)
         consola.warn(
           `[${PROJECT_NAME}]`,
-          (err as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
+          (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
         )
     }
   },
