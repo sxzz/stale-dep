@@ -1,7 +1,7 @@
 {
   "name": "stale-dep",
   "version": "0.7.0",
-  "packageManager": "pnpm@8.7.1",
+  "packageManager": "pnpm@8.7.4",
   "description": "Check your node_modules matches your package.json.",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/stale-dep#readme",
@@ -89,15 +89,15 @@
     "md5": "^2.3.0"
   },
   "devDependencies": {
-    "@nuxt/kit": "^3.7.0",
-    "@nuxt/schema": "^3.7.0",
-    "@sxzz/eslint-config": "^3.5.1",
+    "@nuxt/kit": "^3.7.1",
+    "@nuxt/schema": "^3.7.1",
+    "@sxzz/eslint-config": "^3.5.4",
     "@sxzz/prettier-config": "^1.0.4",
     "@types/fs-extra": "^11.0.1",
     "@types/md5": "^2.3.2",
-    "@types/node": "^20.5.9",
+    "@types/node": "^20.6.0",
     "bumpp": "^9.2.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "eslint-define-config": "^1.23.0",
     "fast-glob": "^3.3.1",
     "prettier": "^3.0.3",
@@ -105,7 +105,7 @@
     "tsx": "^3.12.8",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   },
   "engines": {
     "node": ">=16.14.0"
