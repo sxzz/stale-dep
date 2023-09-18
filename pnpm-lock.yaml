@@ -23,11 +23,11 @@ dependencies:
 
 devDependencies:
   '@nuxt/kit':
-    specifier: ^3.7.1
-    version: 3.7.1
+    specifier: ^3.7.3
+    version: 3.7.3
   '@nuxt/schema':
-    specifier: ^3.7.1
-    version: 3.7.1
+    specifier: ^3.7.3
+    version: 3.7.3
   '@sxzz/eslint-config':
     specifier: ^3.5.4
     version: 3.5.4(eslint@8.49.0)(typescript@5.2.2)
@@ -35,14 +35,14 @@ devDependencies:
     specifier: ^1.0.4
     version: 1.0.4
   '@types/fs-extra':
-    specifier: ^11.0.1
-    version: 11.0.1
+    specifier: ^11.0.2
+    version: 11.0.2
   '@types/md5':
     specifier: ^2.3.2
     version: 2.3.2
   '@types/node':
-    specifier: ^20.6.0
-    version: 20.6.0
+    specifier: ^20.6.2
+    version: 20.6.2
   bumpp:
     specifier: ^9.2.0
     version: 9.2.0
@@ -62,14 +62,14 @@ devDependencies:
     specifier: ^7.2.0
     version: 7.2.0(typescript@5.2.2)
   tsx:
-    specifier: ^3.12.8
-    version: 3.12.8
+    specifier: ^3.12.10
+    version: 3.12.10
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
   vite:
     specifier: ^4.4.9
-    version: 4.4.9(@types/node@20.6.0)
+    version: 4.4.9(@types/node@20.6.2)
   vitest:
     specifier: ^0.34.4
     version: 0.34.4
@@ -294,22 +294,22 @@ packages:
   /@esbuild-kit/cjs-loader@2.4.2:
     resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
     dependencies:
-      '@esbuild-kit/core-utils': 3.2.2
+      '@esbuild-kit/core-utils': 3.3.2
       get-tsconfig: 4.6.2
     dev: true
 
-  /@esbuild-kit/core-utils@3.2.2:
-    resolution: {integrity: sha512-Ub6LaRaAgF80dTSzUdXpFLM1pVDdmEVB9qb5iAzSpyDlX/mfJTFGOnZ516O05p5uWWteNviMKi4PAyEuRxI5gA==}
+  /@esbuild-kit/core-utils@3.3.2:
+    resolution: {integrity: sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ==}
     dependencies:
       esbuild: 0.18.20
       source-map-support: 0.5.21
     dev: true
 
-  /@esbuild-kit/esm-loader@2.5.5:
-    resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
+  /@esbuild-kit/esm-loader@2.6.5:
+    resolution: {integrity: sha512-FxEMIkJKnodyA1OaCUoEvbYRkoZlLZ4d/eXFu9Fh8CbBBgP5EmZxrfTRyN0qpXZ4vOvqnE5YdRdcrmUUXuU+dA==}
     dependencies:
-      '@esbuild-kit/core-utils': 3.2.2
-      get-tsconfig: 4.6.2
+      '@esbuild-kit/core-utils': 3.3.2
+      get-tsconfig: 4.7.0
     dev: true
 
   /@esbuild/android-arm64@0.18.13:
@@ -842,18 +842,18 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nuxt/kit@3.7.1:
-    resolution: {integrity: sha512-8k4q+92qLz5z7RdSOKrEJIjM63xXBg0z/WhTtZgXv1R5ULZ77usdTMjQYhQ+Kgd1NMkpIXeKaAO6903xrSt53Q==}
+  /@nuxt/kit@3.7.3:
+    resolution: {integrity: sha512-bhP02i6CNti15Z4ix3LpR3fd1ANtTcpfS3CDSaCja24hDt3UxIasyp52mqD9LRC+OxrUVHJziB18EwUtS6RLDQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
-      '@nuxt/schema': 3.7.1
+      '@nuxt/schema': 3.7.3
       c12: 1.4.2
       consola: 3.2.3
       defu: 6.1.2
       globby: 13.2.2
       hash-sum: 2.0.0
       ignore: 5.2.4
-      jiti: 1.19.3
+      jiti: 1.20.0
       knitwork: 1.0.0
       mlly: 1.4.2
       pathe: 1.1.1
@@ -869,8 +869,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/schema@3.7.1:
-    resolution: {integrity: sha512-+0W/oos7Ktm3eTwQ/78PrcAObR0+yQzHIUzbQ7HgUnEEntRGVxp4hnfng5dmhvVjJqQvpuGZHa3yIS/g41vE6A==}
+  /@nuxt/schema@3.7.3:
+    resolution: {integrity: sha512-Uqe3Z9RnAROzv5owQo//PztD9d4csKK6ulwQO1hIAinCh34X7z2zrv9lhm14hlRYU1n7ISEi4S7UeHgL/r8d8A==}
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
       '@nuxt/ui-templates': 1.3.1
@@ -977,11 +977,11 @@ packages:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
-  /@types/fs-extra@11.0.1:
-    resolution: {integrity: sha512-MxObHvNl4A69ofaTRU8DFqvgzzv8s9yRtaPPm5gud9HDNvpB3GPQFvNuTWAI59B9huVGV5jXYJwbCsmBsOGYWA==}
+  /@types/fs-extra@11.0.2:
+    resolution: {integrity: sha512-c0hrgAOVYr21EX8J0jBMXGLMgJqVf/v6yxi0dLaJboW9aQPh16Id+z6w2Tx1hm+piJOLv8xPfVKZCLfjPw/IMQ==}
     dependencies:
       '@types/jsonfile': 6.1.1
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
     dev: true
 
   /@types/json-schema@7.0.12:
@@ -995,7 +995,7 @@ packages:
   /@types/jsonfile@6.1.1:
     resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
     dependencies:
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
     dev: true
 
   /@types/md5@2.3.2:
@@ -1008,8 +1008,8 @@ packages:
       '@types/unist': 2.0.7
     dev: true
 
-  /@types/node@20.6.0:
-    resolution: {integrity: sha512-najjVq5KN2vsH2U/xyh2opaSEz6cZMR2SetLIlxlj08nOcmPOemJmUK2o4kUzfLqfrWE0PIrNeE16XhYDd3nqg==}
+  /@types/node@20.6.2:
+    resolution: {integrity: sha512-Y+/1vGBHV/cYk6OI1Na/LHzwnlNCAfU3ZNGrc1LdRe/LAIbdDPTTv/HU3M7yXN448aTVDq3eKRm2cg7iKLb8gw==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
@@ -1470,7 +1470,7 @@ packages:
       defu: 6.1.2
       dotenv: 16.3.1
       giget: 1.1.2
-      jiti: 1.19.3
+      jiti: 1.20.0
       mlly: 1.4.2
       ohash: 1.1.2
       pathe: 1.1.1
@@ -2471,6 +2471,12 @@ packages:
       resolve-pkg-maps: 1.0.0
     dev: true
 
+  /get-tsconfig@4.7.0:
+    resolution: {integrity: sha512-pmjiZ7xtB8URYm74PlGJozDNyhvsVLUcpBa8DZBG3bWHwaHa9bPiRpiSfovw+fjhwONSCWKRyk+JQHEGZmMrzw==}
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+    dev: true
+
   /giget@1.1.2:
     resolution: {integrity: sha512-HsLoS07HiQ5oqvObOI+Qb2tyZH4Gj5nYGfF9qQcZNrPw+uEFhdXtgJr01aO2pWadGHucajYDLxxbtQkm97ON2A==}
     hasBin: true
@@ -2910,6 +2916,11 @@ packages:
     hasBin: true
     dev: true
 
+  /jiti@1.20.0:
+    resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
+    hasBin: true
+    dev: true
+
   /joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
@@ -3192,15 +3203,6 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: true
-
-  /mlly@1.4.1:
-    resolution: {integrity: sha512-SCDs78Q2o09jiZiE2WziwVBEqXQ02XkGdUy45cbJf+BpYRIjArXRJ1Wbowxkb+NaM9DWvS3UC9GiO/6eqvQ/pg==}
-    dependencies:
-      acorn: 8.10.0
-      pathe: 1.1.1
-      pkg-types: 1.0.3
-      ufo: 1.3.0
     dev: true
 
   /mlly@1.4.2:
@@ -4150,13 +4152,13 @@ packages:
       - ts-node
     dev: true
 
-  /tsx@3.12.8:
-    resolution: {integrity: sha512-Lt9KYaRGF023tlLInPj8rgHwsZU8qWLBj4iRXNWxTfjIkU7canGL806AqKear1j722plHuiYNcL2ZCo6uS9UJA==}
+  /tsx@3.12.10:
+    resolution: {integrity: sha512-2+46h4xvUt1aLDNvk5YBT8Uzw+b7BolGbn7iSMucYqCXZiDc+1IMghLVdw8kKjING32JFOeO+Am9posvjkeclA==}
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': 2.4.2
-      '@esbuild-kit/core-utils': 3.2.2
-      '@esbuild-kit/esm-loader': 2.5.5
+      '@esbuild-kit/core-utils': 3.3.2
+      '@esbuild-kit/esm-loader': 2.6.5
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -4251,7 +4253,7 @@ packages:
       '@antfu/utils': 0.7.5
       defu: 6.1.2
       jiti: 1.19.3
-      mlly: 1.4.1
+      mlly: 1.4.2
     dev: true
 
   /unctx@2.3.1:
@@ -4314,7 +4316,7 @@ packages:
       '@babel/standalone': 7.22.9
       '@babel/types': 7.22.5
       defu: 6.1.2
-      jiti: 1.19.3
+      jiti: 1.20.0
       mri: 1.2.0
       scule: 1.0.0
     transitivePeerDependencies:
@@ -4349,17 +4351,17 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite-node@0.34.4(@types/node@20.6.0):
+  /vite-node@0.34.4(@types/node@20.6.2):
     resolution: {integrity: sha512-ho8HtiLc+nsmbwZMw8SlghESEE3KxJNp04F/jPUCLVvaURwt0d+r9LxEqCX5hvrrOQ0GSyxbYr5ZfRYhQ0yVKQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
-      mlly: 1.4.1
+      mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.9(@types/node@20.6.0)
+      vite: 4.4.9(@types/node@20.6.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4371,7 +4373,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.9(@types/node@20.6.0):
+  /vite@4.4.9(@types/node@20.6.2):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4399,7 +4401,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
       esbuild: 0.18.13
       postcss: 8.4.27
       rollup: 3.27.2
@@ -4440,7 +4442,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
       '@vitest/expect': 0.34.4
       '@vitest/runner': 0.34.4
       '@vitest/snapshot': 0.34.4
@@ -4459,8 +4461,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.0
       tinypool: 0.7.0
-      vite: 4.4.9(@types/node@20.6.0)
-      vite-node: 0.34.4(@types/node@20.6.0)
+      vite: 4.4.9(@types/node@20.6.2)
+      vite-node: 0.34.4(@types/node@20.6.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
