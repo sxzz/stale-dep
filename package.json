@@ -98,7 +98,7 @@
     "@types/node": "^20.9.2",
     "bumpp": "^9.2.0",
     "eslint": "^8.54.0",
-    "eslint-define-config": "^1.24.1",
+    "eslint-define-config": "^2.0.0",
     "fast-glob": "^3.3.2",
     "prettier": "^3.1.0",
     "tsup": "^8.0.0",
