@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { defineNuxtModule } from '@nuxt/kit'
 import { consola } from 'consola'
 import { PROJECT_NAME, type PackageManager, check, getPackageManager } from '.'
@@ -26,7 +27,7 @@ export default defineNuxtModule<{
       if (opts.warn)
         consola.warn(
           `[${PROJECT_NAME}]`,
-          (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
+          (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`,
         )
     }
   },

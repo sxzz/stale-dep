@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { lstat, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import consola from 'consola'
@@ -18,7 +19,7 @@ export * from './constant'
 export * from './command'
 
 export async function getPackageManager(
-  path: string = process.cwd()
+  path: string = process.cwd(),
 ): Promise<PackageManager> {
   const pm = await getProjectInfo({ cwd: path })
   if (!pm) throw new Error('No package manager lock file found.')
@@ -27,7 +28,7 @@ export async function getPackageManager(
 }
 
 export async function calcHash(
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): Promise<string> {
   let contents = (await readFile('package.json', 'utf-8')).trim().trim()
   try {
@@ -86,7 +87,7 @@ export function getHash(): Promise<string> | undefined {
 }
 
 export async function checkHash(
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): Promise<boolean> {
   return (await getHash()) === (await calcHash(packageManager))
 }
@@ -102,7 +103,7 @@ export function getMtime(): Promise<Record<string, number>> | undefined {
 }
 
 export async function calcMtime(
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): Promise<Record<string, number>> {
   const mtime: Record<string, number> = {}
 
@@ -120,14 +121,14 @@ export async function calcMtime(
 }
 
 export async function checkMtime(
-  packageManager: PackageManager
+  packageManager: PackageManager,
 ): Promise<boolean> {
   const cached = await getMtime()
   if (!cached) return false
 
   const current = await calcMtime(packageManager)
   return [...new Set([...Object.keys(cached), ...Object.keys(current)])].every(
-    (k) => cached[k] === current[k]
+    (k) => cached[k] === current[k],
   )
 }
 
