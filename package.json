@@ -3,6 +3,7 @@
   "version": "0.7.0",
   "packageManager": "pnpm@8.12.1",
   "description": "Check your node_modules matches your package.json.",
+  "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/sxzz/stale-dep#readme",
   "bugs": {
@@ -16,32 +17,20 @@
     "dist"
   ],
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": {
-        "require": "./dist/index.d.ts",
-        "import": "./dist/index.d.mts"
-      },
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     },
     "./cli": {
-      "types": {
-        "require": "./dist/cli.d.ts",
-        "import": "./dist/cli.d.mts"
-      },
-      "require": "./dist/cli.js",
-      "import": "./dist/cli.mjs"
+      "require": "./dist/cli.cjs",
+      "import": "./dist/cli.js"
     },
     "./nuxt": {
-      "types": {
-        "require": "./dist/nuxt.d.ts",
-        "import": "./dist/nuxt.d.mts"
-      },
-      "require": "./dist/nuxt.js",
-      "import": "./dist/nuxt.mjs"
+      "require": "./dist/nuxt.cjs",
+      "import": "./dist/nuxt.js"
     },
     "./*": "./*"
   },
@@ -54,7 +43,7 @@
     }
   },
   "bin": {
-    "stale-dep": "./bin/stale-dep.mjs"
+    "stale-dep": "./bin/stale-dep.js"
   },
   "publishConfig": {
     "access": "public"
