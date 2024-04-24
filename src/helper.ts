@@ -34,7 +34,7 @@ export const getProjectInfo = async ({
     const lockFile = basename(lockPath)
     pm =
       (AGENTS_AND_LOCKS.find(
-        ([, lock]) => lock === lockFile
+        ([, lock]) => lock === lockFile,
       )?.[0] as PackageManager) ?? null
   }
   return pm

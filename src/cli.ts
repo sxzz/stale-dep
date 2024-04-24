@@ -1,3 +1,4 @@
+import process from 'node:process'
 import cac from 'cac'
 import consola from 'consola'
 import { PROJECT_NAME } from './constant'
@@ -27,7 +28,7 @@ async function run() {
   } catch (error) {
     consola[argv.options.warn ? 'warn' : 'error'](
       `[${PROJECT_NAME}]`,
-      (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`
+      (error as Error).message ?? `Unknown error in ${PROJECT_NAME}.`,
     )
     if (!argv.options.warn) process.exit(1)
   }

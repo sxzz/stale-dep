@@ -34,8 +34,8 @@ npm install -D stale-dep
     "build": "stale-dep && some build command",
     "dev": "stale-dep && some dev command",
     // ...
-    "postinstall": "stale-dep -u"
-  }
+    "postinstall": "stale-dep -u",
+  },
 }
 ```
 
