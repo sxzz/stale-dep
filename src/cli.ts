@@ -1,8 +1,8 @@
 import process from 'node:process'
 import cac from 'cac'
 import consola from 'consola'
-import { PROJECT_NAME } from './constant'
 import { check, update } from './command'
+import { PROJECT_NAME } from './constant'
 import { getPackageManager } from '.'
 
 const cli = cac('stale-dep')
@@ -14,7 +14,6 @@ cli.option('-w, --warn', 'Show warning messages instead of errors', {
 })
 const argv = cli.parse()
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
 run()
 
 async function run() {

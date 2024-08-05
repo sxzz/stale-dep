@@ -1,19 +1,19 @@
-import process from 'node:process'
-import { lstat, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
+import { lstat, readFile, writeFile } from 'node:fs/promises'
+import process from 'node:process'
 import consola from 'consola'
-import md5 from 'md5'
 import { ensureDir } from 'fs-extra'
-import { getProjectInfo } from './helper'
+import md5 from 'md5'
 import {
-  PMS,
-  type PackageManager,
   cacheDir,
   hashFile,
   lockFileMap,
   mtimeFile,
+  PMS,
   rcFileMap,
+  type PackageManager,
 } from './constant'
+import { getProjectInfo } from './helper'
 
 export * from './constant'
 export * from './command'

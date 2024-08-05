@@ -1,6 +1,6 @@
-import { basename, resolve } from 'node:path'
 import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
+import { basename, resolve } from 'node:path'
 import { findUp } from 'find-up'
 import { AGENTS_AND_LOCKS, LOCKS, type PackageManager } from './constant'
 

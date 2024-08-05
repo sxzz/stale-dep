@@ -1,13 +1,13 @@
 import consola from 'consola'
 import { INSTALL_COMMANDS } from './constant'
 import {
-  type PackageManager,
   calcHash,
   calcMtime,
   checkHash,
   checkMtime,
   storeHash,
   storeMtime,
+  type PackageManager,
 } from '.'
 
 export async function update(pm: PackageManager) {
