@@ -5,7 +5,7 @@ import { check, update } from './command'
 import { PROJECT_NAME } from './constant'
 import { getPackageManager } from '.'
 
-const cli = cac('stale-dep')
+const cli = cac(PROJECT_NAME)
 
 cli.option('-p, --packageManager <packageManager>', 'specific package manager')
 cli.option('-u, --update', 'Update stale dependencies', { default: false })
