@@ -80,7 +80,7 @@
   "devDependencies": {
     "@nuxt/kit": "^3.12.4",
     "@nuxt/schema": "^3.12.4",
-    "@sxzz/eslint-config": "^3.16.3",
+    "@sxzz/eslint-config": "^4.1.1",
     "@sxzz/prettier-config": "^2.0.2",
     "@types/fs-extra": "^11.0.4",
     "@types/md5": "^2.3.5",
