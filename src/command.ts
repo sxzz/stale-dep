@@ -14,7 +14,7 @@ export async function update(pm: AgentName): Promise<void> {
     calcHash(pm).then((hash) => storeHash(hash)),
     calcMtime(pm).then((mtime) => storeMtime(mtime)),
   ])
-  consola.success('Successfully store the dependency hash')
+  consola.success('Updated dependency snapshot')
 }
 
 export async function check(pm: AgentName): Promise<void> {

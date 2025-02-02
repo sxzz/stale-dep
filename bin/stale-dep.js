@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import '../dist/cli.js'
+import { runCLI } from '../dist/cli.js'
+runCLI()

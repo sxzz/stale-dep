@@ -43,9 +43,9 @@
     "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "build": "pnpm check && tsdown",
-    "test": "tsx ./src/cli.ts --update && vitest",
-    "check": "tsx ./src/cli.ts",
-    "update-hash": "tsx ./src/cli.ts --update",
+    "test": "tsx ./cli.ts --update && vitest",
+    "check": "tsx ./cli.ts",
+    "update-hash": "tsx ./cli.ts --update",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },

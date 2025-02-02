@@ -6,23 +6,25 @@ import { version } from '../package.json'
 import { check, update } from './command'
 import { PROJECT_NAME } from './constant'
 
-const cli = cac(PROJECT_NAME)
-cli.help().version(version)
+export function runCLI(): void {
+  const cli = cac(PROJECT_NAME)
+  cli.help().version(version)
 
-cli
-  .option(
-    '-p, --packageManager <packageManager>',
-    `specific package manager, available options: npm, yarn, pnpm, bun, deno`,
-  )
-  .option('-u, --update', 'Update stale dependencies', { default: false })
-  .option('-w, --warn', 'Show warning messages instead of errors', {
-    default: false,
-  })
-  .command('', 'Check stale dependencies')
-  .action(run)
-cli.parse()
+  cli
+    .option(
+      '-p, --packageManager <packageManager>',
+      `specific package manager, available options: npm, yarn, pnpm, bun, deno`,
+    )
+    .option('-u, --update', 'Update dependencies snapshot', { default: false })
+    .option('-w, --warn', 'Show warning messages instead of errors', {
+      default: false,
+    })
+    .command('', 'Check stale dependencies')
+    .action(main)
+  cli.parse()
+}
 
-async function run(args: {
+async function main(args: {
   packageManager?: AgentName
   update: boolean
   warn: boolean
