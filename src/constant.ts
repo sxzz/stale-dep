@@ -27,9 +27,20 @@ export const INSTALL_COMMANDS: Record<PackageManager, string> = {
 }
 
 export const PMS = Object.keys(lockFileMap) as PackageManager[]
-export const LOCKS = Object.values(lockFileMap)
-export const AGENTS_AND_LOCKS = Object.entries(lockFileMap)
+export const LOCKS: (
+  | 'bun.lockb'
+  | 'pnpm-lock.yaml'
+  | 'yarn.lock'
+  | 'package-lock.json'
+)[] = Object.values(lockFileMap)
+export const AGENTS_AND_LOCKS: [
+  string,
+  'bun.lockb' | 'pnpm-lock.yaml' | 'yarn.lock' | 'package-lock.json',
+][] = Object.entries(lockFileMap)
 
-export const cacheDir = path.resolve(process.cwd(), 'node_modules/.cache')
-export const hashFile = path.resolve(cacheDir, 'dep-hash')
-export const mtimeFile = path.resolve(cacheDir, 'dep-mtime')
+export const cacheDir: string = path.resolve(
+  process.cwd(),
+  'node_modules/.cache',
+)
+export const hashFile: string = path.resolve(cacheDir, 'dep-hash')
+export const mtimeFile: string = path.resolve(cacheDir, 'dep-mtime')

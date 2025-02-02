@@ -2,14 +2,15 @@ import process from 'node:process'
 import { defineNuxtModule } from '@nuxt/kit'
 import { consola } from 'consola'
 import { check, getPackageManager, PROJECT_NAME, type PackageManager } from '.'
-import type {} from '@nuxt/schema'
+import type { NuxtModule } from '@nuxt/schema'
 
-// eslint-disable-next-line import/no-default-export
-export default defineNuxtModule<{
+export interface Options {
   enabled?: boolean
   packageManager?: PackageManager
   warn?: boolean
-}>({
+}
+
+const module: NuxtModule<Options> = defineNuxtModule<Options>({
   meta: {
     name: 'stale-dep',
     configKey: 'staleDep',
@@ -32,3 +33,6 @@ export default defineNuxtModule<{
     }
   },
 })
+
+// eslint-disable-next-line import/no-default-export
+export default module

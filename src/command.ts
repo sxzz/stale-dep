@@ -10,7 +10,7 @@ import {
   type PackageManager,
 } from '.'
 
-export async function update(pm: PackageManager) {
+export async function update(pm: PackageManager): Promise<void> {
   await Promise.all([
     calcHash(pm).then((hash) => storeHash(hash)),
     calcMtime(pm).then((mtime) => storeMtime(mtime)),
@@ -18,7 +18,7 @@ export async function update(pm: PackageManager) {
   consola.success('Successfully store the dependency hash')
 }
 
-export async function check(pm: PackageManager) {
+export async function check(pm: PackageManager): Promise<void> {
   if (!(await checkMtime(pm)) && !(await checkHash(pm))) {
     const cmd = INSTALL_COMMANDS[pm]
     throw new Error(`Your node_modules is stale. Please run \`${cmd}\` first.`)

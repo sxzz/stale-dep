@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["es2022"],
+    "lib": ["es2023"],
     "moduleDetection": "force",
     "module": "preserve",
     "moduleResolution": "bundler",
@@ -9,9 +9,11 @@
     "types": ["node"],
     "strict": true,
     "noUnusedLocals": true,
-    "noEmit": true,
+    "declaration": true,
+    "isolatedDeclarations": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
   "include": ["src", "tests"]
