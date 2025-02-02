@@ -20,18 +20,9 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
-    },
-    "./cli": {
-      "require": "./dist/cli.cjs",
-      "import": "./dist/cli.js"
-    },
-    "./nuxt": {
-      "require": "./dist/nuxt.cjs",
-      "import": "./dist/nuxt.js"
-    },
+    ".": "./dist/index.js",
+    "./cli": "./dist/cli.js",
+    "./nuxt": "./dist/nuxt.js",
     "./*": "./*"
   },
   "typesVersions": {
@@ -95,7 +86,7 @@
     "vitest": "^3.0.4"
   },
   "engines": {
-    "node": ">=18.12.0"
+    "node": ">=20.18.0"
   },
   "prettier": "@sxzz/prettier-config"
 }
