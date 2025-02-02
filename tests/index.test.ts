@@ -1,16 +1,17 @@
+import { detect } from 'package-manager-detector'
 import { expect, test } from 'vitest'
-import { checkHash, checkMtime, getPackageManager } from '../src'
+import { checkHash, checkMtime } from '../src'
 
-test('getPackageManager', async () => {
-  expect(await getPackageManager()).toBe('pnpm')
+const pm = (await detect())!.name
+
+test('detect package manager', () => {
+  expect(pm).toBe('pnpm')
 })
 
 test('checkHash', async () => {
-  const pm = await getPackageManager()
   expect(await checkHash(pm)).toBe(true)
 })
 
 test('checkMtime', async () => {
-  const pm = await getPackageManager()
   expect(await checkMtime(pm)).toBe(true)
 })
