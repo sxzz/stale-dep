@@ -11,6 +11,7 @@ export function runCLI(): void {
   cli.help().version(version)
 
   cli
+    .option('--cwd <cwd>', 'current working directory')
     .option(
       '-p, --packageManager <packageManager>',
       `specific package manager, available options: npm, yarn, pnpm, bun, deno`,
@@ -25,10 +26,14 @@ export function runCLI(): void {
 }
 
 async function main(args: {
+  cwd?: string
   packageManager?: AgentName
   update: boolean
   warn: boolean
 }) {
+  if (args.cwd) {
+    process.chdir(args.cwd)
+  }
   try {
     const pm = args.packageManager || (await detect())?.name
     if (!pm) throw new Error('No package manager detected.')
