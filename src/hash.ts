@@ -2,9 +2,8 @@ import { Buffer } from 'node:buffer'
 import { createHash } from 'node:crypto'
 import { readFile, writeFile } from 'node:fs/promises'
 import consola from 'consola'
-import { ensureDir } from 'fs-extra'
 import { cacheDir, hashFile, rcFileMap } from './constant'
-import { getLockfiles, tryRead } from './utils'
+import { ensureDir, getLockfiles, tryRead } from './utils'
 import type { AgentName } from 'package-manager-detector'
 
 export async function calcHash(packageManager: AgentName): Promise<string> {

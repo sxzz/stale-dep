@@ -1,7 +1,6 @@
 import { lstat, writeFile } from 'node:fs/promises'
-import { ensureDir } from 'fs-extra'
 import { cacheDir, mtimeFile, rcFileMap } from './constant'
-import { getLockfiles, tryRead } from './utils'
+import { ensureDir, getLockfiles, tryRead } from './utils'
 import type { AgentName } from 'package-manager-detector'
 
 export async function storeMtime(mtime: Record<string, number>): Promise<void> {

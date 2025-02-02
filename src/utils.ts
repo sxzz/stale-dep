@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { mkdir, readFile } from 'node:fs/promises'
 import { LOCKS, type AgentName } from 'package-manager-detector'
 
 export function getLockfiles(om: AgentName): string[] {
@@ -12,4 +12,8 @@ export function tryRead(filename: string): Promise<string | undefined> {
     (r) => r.trim(),
     () => undefined,
   )
+}
+
+export async function ensureDir(dir: string): Promise<void> {
+  await mkdir(dir, { recursive: true })
 }
