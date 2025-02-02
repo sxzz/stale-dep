@@ -1,6 +1,6 @@
 import process from 'node:process'
 import { defineNuxtModule } from '@nuxt/kit'
-import { consola } from 'consola'
+import consola from 'consola'
 import { detect, type AgentName } from 'package-manager-detector'
 import { check } from './command'
 import { PROJECT_NAME } from './constant'
