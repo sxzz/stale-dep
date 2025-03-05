@@ -1,7 +1,7 @@
 {
   "name": "stale-dep",
   "version": "0.8.0",
-  "packageManager": "pnpm@10.2.1",
+  "packageManager": "pnpm@10.5.2",
   "description": "Check your node_modules matches your package.json.",
   "type": "module",
   "license": "MIT",
@@ -66,22 +66,22 @@
   "dependencies": {
     "cac": "^6.7.14",
     "consola": "^3.4.0",
-    "package-manager-detector": "^0.2.9"
+    "package-manager-detector": "^0.2.11"
   },
   "devDependencies": {
     "@nuxt/kit": "^3.15.4",
     "@nuxt/schema": "^3.15.4",
-    "@sxzz/eslint-config": "^5.0.0",
-    "@sxzz/prettier-config": "^2.1.1",
-    "@types/node": "^22.13.0",
-    "bumpp": "^10.0.1",
-    "eslint": "^9.19.0",
-    "prettier": "^3.4.2",
-    "tsdown": "^0.5.6",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11",
-    "vitest": "^3.0.4"
+    "@sxzz/eslint-config": "^5.2.0",
+    "@sxzz/prettier-config": "^2.2.0",
+    "@types/node": "^22.13.9",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.21.0",
+    "prettier": "^3.5.3",
+    "tsdown": "^0.6.3",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
   },
   "engines": {
     "node": ">=20.18.0"
