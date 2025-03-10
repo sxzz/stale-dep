@@ -1,6 +1,6 @@
 {
   "name": "stale-dep",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "packageManager": "pnpm@10.6.2",
   "description": "Check your node_modules matches your package.json.",
   "type": "module",
