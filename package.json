@@ -44,6 +44,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
+    "typecheck": "tsc --noEmit",
     "build": "pnpm check && tsdown",
     "test": "tsx ./cli.ts --update && vitest",
     "check": "tsx ./cli.ts",
