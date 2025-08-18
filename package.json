@@ -48,7 +48,7 @@
     "test": "tsx ./cli.ts --update && vitest",
     "check": "tsx ./cli.ts",
     "update-hash": "tsx ./cli.ts --update",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {

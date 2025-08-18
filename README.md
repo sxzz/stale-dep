@@ -1,6 +1,8 @@
-# stale-dep [![npm](https://img.shields.io/npm/v/stale-dep.svg)](https://npmjs.com/package/stale-dep)
+# stale-dep
 
-[![Unit Test](https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Unit Test][unit-test-src]][unit-test-href]
 
 Check if your `node_modules` is stale.
 
@@ -50,3 +52,12 @@ npm install -D stale-dep
 ## License
 
 [MIT](./LICENSE) License © 2022-PRESENT [三咲智子](https://github.com/sxzz)
+
+<!-- Badges -->
+
+[npm-version-src]: https://img.shields.io/npm/v/stale-dep.svg
+[npm-version-href]: https://npmjs.com/package/stale-dep
+[npm-downloads-src]: https://img.shields.io/npm/dm/stale-dep
+[npm-downloads-href]: https://www.npmcharts.com/compare/stale-dep?interval=30
+[unit-test-src]: https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml/badge.svg
+[unit-test-href]: https://github.com/sxzz/stale-dep/actions/workflows/unit-test.yml
