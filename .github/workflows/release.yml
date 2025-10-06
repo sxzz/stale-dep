@@ -10,7 +10,7 @@ jobs:
     uses: sxzz/workflows/.github/workflows/release.yml@v1
     with:
       publish: true
-      install: pnpm install && pnpm run update-hash
+      build: pnpm run update-hash && pnpm run build
     permissions:
       contents: write
       id-token: write

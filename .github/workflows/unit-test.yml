@@ -10,4 +10,4 @@ jobs:
   unit-test:
     uses: sxzz/workflows/.github/workflows/unit-test.yml@v1
     with:
-      install: pnpm install && pnpm run update-hash
+      build: pnpm run update-hash && pnpm run build
