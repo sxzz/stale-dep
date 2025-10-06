@@ -25,7 +25,7 @@
     ".": "./dist/index.js",
     "./cli": "./dist/cli.js",
     "./nuxt": "./dist/nuxt.js",
-    "./*": "./*"
+    "./package.json": "./package.json"
   },
   "typesVersions": {
     "*": {
