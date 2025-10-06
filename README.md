@@ -51,7 +51,7 @@ npm install -D stale-dep
 
 ## License
 
-[MIT](./LICENSE) License © 2022-PRESENT [三咲智子](https://github.com/sxzz)
+[MIT](./LICENSE) License © 2023-PRESENT [Kevin Deng](https://github.com/sxzz)
 
 <!-- Badges -->
 
