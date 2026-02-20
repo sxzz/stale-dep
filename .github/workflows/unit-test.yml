@@ -13,3 +13,4 @@ jobs:
     uses: sxzz/workflows/.github/workflows/unit-test.yml@v1
     with:
       build: pnpm run update-hash && pnpm run build
+      node-versions: 22,24,25
