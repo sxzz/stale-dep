@@ -2,8 +2,8 @@ import process from 'node:process'
 import { defineNuxtModule } from '@nuxt/kit'
 import consola from 'consola'
 import { detect, type AgentName } from 'package-manager-detector'
-import { check } from './command'
-import { PROJECT_NAME } from './constant'
+import { check } from './command.ts'
+import { PROJECT_NAME } from './constant.ts'
 import type { NuxtModule } from '@nuxt/schema'
 
 export interface Options {
@@ -42,5 +42,4 @@ const module: NuxtModule<Options> = defineNuxtModule<Options>({
   },
 })
 
-// eslint-disable-next-line import/no-default-export
 export default module

@@ -1,14 +1,14 @@
 import process from 'node:process'
-import cac from 'cac'
+import { cac } from 'cac'
 import consola from 'consola'
 import { detect, type AgentName } from 'package-manager-detector'
-import { version } from '../package.json'
-import { check, update } from './command'
-import { PROJECT_NAME } from './constant'
+import pkg from '../package.json' with { type: 'json' }
+import { check, update } from './command.ts'
+import { PROJECT_NAME } from './constant.ts'
 
 export function runCLI(): void {
   const cli = cac(PROJECT_NAME)
-  cli.help().version(version)
+  cli.help().version(pkg.version)
 
   cli
     .option('--cwd <cwd>', 'current working directory')

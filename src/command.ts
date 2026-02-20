@@ -7,7 +7,7 @@ import {
   checkMtime,
   storeHash,
   storeMtime,
-} from './index'
+} from './index.ts'
 
 export async function update(pm: AgentName): Promise<void> {
   await Promise.all([

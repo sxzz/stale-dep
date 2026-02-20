@@ -1,6 +1,6 @@
 import { detect } from 'package-manager-detector'
 import { expect, test } from 'vitest'
-import { checkHash, checkMtime } from '../src'
+import { checkHash, checkMtime } from '../src/index.ts'
 
 const pm = (await detect())!.name
 

@@ -1,54 +1,47 @@
 {
   "name": "stale-dep",
+  "type": "module",
   "version": "0.8.4",
   "packageManager": "pnpm@10.30.1",
   "description": "Check your node_modules matches your package.json.",
-  "type": "module",
+  "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
+  "funding": "https://github.com/sponsors/sxzz",
   "homepage": "https://github.com/sxzz/stale-dep#readme",
-  "bugs": {
-    "url": "https://github.com/sxzz/stale-dep/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sxzz/stale-dep.git"
   },
-  "author": "Kevin Deng <sxzz@sxzz.moe>",
-  "funding": "https://github.com/sponsors/sxzz",
+  "bugs": {
+    "url": "https://github.com/sxzz/stale-dep/issues"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./nuxt": "./dist/nuxt.mjs",
+    "./run": "./dist/run.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "stale-dep": "./dist/run.mjs"
+  },
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./cli": "./dist/cli.js",
-    "./nuxt": "./dist/nuxt.js",
-    "./package.json": "./package.json"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./*"
-      ]
-    }
-  },
-  "bin": {
-    "stale-dep": "./bin/stale-dep.js"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsgo --noEmit",
     "build": "pnpm check && tsdown",
-    "test": "tsx ./cli.ts --update && vitest",
-    "check": "tsx ./cli.ts",
-    "update-hash": "tsx ./cli.ts --update",
+    "test": "node src/run.ts --update && vitest",
+    "check": "node src/run.ts",
+    "update-hash": "node src/run.ts --update",
     "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
@@ -75,17 +68,15 @@
     "@sxzz/eslint-config": "^7.8.0",
     "@sxzz/prettier-config": "^2.3.1",
     "@types/node": "^25.3.0",
+    "@typescript/native-preview": "7.0.0-dev.20260220.1",
     "bumpp": "^10.4.1",
     "eslint": "^10.0.0",
     "prettier": "^3.8.1",
     "tsdown": "^0.20.3",
-    "tsx": "^4.21.0",
+    "tsdown-preset-sxzz": "^0.3.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vitest": "^4.0.18"
-  },
-  "engines": {
-    "node": ">=20.19.0"
   },
   "prettier": "@sxzz/prettier-config"
 }
