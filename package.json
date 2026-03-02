@@ -58,7 +58,7 @@
     }
   },
   "dependencies": {
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "consola": "^3.4.2",
     "package-manager-detector": "^1.6.0"
   },
