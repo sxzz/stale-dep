@@ -75,7 +75,7 @@
     "tsdown": "^0.20.3",
     "tsdown-preset-sxzz": "^0.3.3",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
+    "vite": "^8.0.0",
     "vitest": "^4.0.18"
   },
   "prettier": "@sxzz/prettier-config"
