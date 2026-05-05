@@ -10,7 +10,7 @@ permissions: {}
 
 jobs:
   unit-test:
-    uses: sxzz/workflows/.github/workflows/unit-test.yml@v1
+    uses: sxzz/workflows/.github/workflows/unit-test.yml@main
     with:
       build: pnpm run update-hash && pnpm run build
       node-versions: 22,24,25
