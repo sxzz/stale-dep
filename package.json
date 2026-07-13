@@ -74,7 +74,7 @@
     "prettier": "^3.8.3",
     "tsdown": "^0.22.0",
     "tsdown-preset-sxzz": "^0.6.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "vite": "^8.0.12",
     "vitest": "^4.1.6"
   },
