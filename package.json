@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/sxzz/stale-dep/issues"
   },
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./cli": "./dist/cli.mjs",
